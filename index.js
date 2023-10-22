@@ -1,15 +1,15 @@
         function saludoUser(){
-            let nombreUser = prompt("Ingresa su nombre:")
-            alert('Bienvenido a la calculadora de Indice de Masa Muscular ' + nombreUser + ".")
+            let nombreUsuario = prompt("Ingresa su nombre:")
+            alert('Bienvenido a la calculadora de Indice de Masa Muscular ' + nombreUsuario + ".")
+            return nombreUsuario;
         }
-        saludoUser()
+        
+        let nombreUsuario = saludoUser();
+         let edadUsuario = parseInt(prompt('Ingrese su edad'));
+         let pesoUsuario = parseFloat(prompt('Ingrese su peso en kilogramos'));
+         let alturaUsuario = parseFloat(prompt('Ingrese su altura en en centimetros'));
 
-
-         let edadUsuario = parseInt(prompt('Ingrese su edad'))
-         let pesoUsuario = parseFloat(prompt('Ingrese su peso en kilogramos'))
-         let alturaUsuario = parseFloat(prompt('Ingrese su altura en en centimetros'))
-
-         const cuentaImc = pesoUsuario / (alturaUsuario**2) *10000
+         const cuentaImc = pesoUsuario / (alturaUsuario**2) *10000;
         
          alert('Su indice de masa muscular es de ' + parseInt(cuentaImc))
         
@@ -60,31 +60,27 @@
 
 
 
+// CREACION DE NUEVA PERSONA SEGUN DATOS INGRESADOS POR EL USUARIO
 
         class Personas {
-    constructor(nombreUser, edadUsuario, pesoUsuario, alturaUsuario) {
-        this.nombreUser = nombreUser
-        this.edadUsuario = edadUsuario
-        this.pesoUsuario = pesoUsuario
-        this.alturaUsuario = alturaUsuario
-        this.registrado = function (){
-            console.log(`El usuario ${this.nombreUser} ha sido guardado correctamente`)
+            constructor(nombreUsuario, edadUsuario, pesoUsuario, alturaUsuario) {
+                this.nombreUsuario = nombreUsuario;
+                this.edadUsuario = edadUsuario;
+                this.pesoUsuario = pesoUsuario;
+                this.alturaUsuario = alturaUsuario;
+            }
+        
+            registrado() {
+                console.log(`El usuario ${this.nombreUsuario} ha sido guardado correctamente`);
+            }
         }
-    }
 
-}
+const persona1 = new Personas(nombreUsuario, edadUsuario, pesoUsuario, alturaUsuario);
 
-const persona1 = new Personas("Lucas",20, 76,170 )
-persona1.registrado()
+persona1.registrado();
+console.log(persona1);
 
-const alimentos = [{ comida: "milanesa", calorias: 200, proteina: 20},
-                    { comida: "fideos", calorias: 300, proteina: 12},
-                { comida: "arroz", calorias: 100, proteina: 15}];
-
-for (const alimento of alimentos) {
-    console.log(alimento.comida)
-    console.log(alimento.calorias)
-    console.log(alimento.proteina)
-
-
-}
+let personasCreadas = [];
+personasCreadas.push(persona1);
+console.log(personasCreadas);
+let separacion = personasCreadas.join("-")
